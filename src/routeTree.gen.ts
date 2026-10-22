@@ -9,50 +9,610 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as PatientRouteImport } from './routes/_patient'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as RecuperarPasswordRouteImport } from './routes/recuperar-password'
+import { Route as RegistroRouteImport } from './routes/registro'
+import { Route as PatientIndexRouteImport } from './routes/_patient.index'
+import { Route as PatientEspecialidadesRouteImport } from './routes/_patient.especialidades'
+import { Route as PatientMiPerfilRouteImport } from './routes/_patient.mi-perfil'
+import { Route as PatientReservarTurnoRouteImport } from './routes/_patient.reservar-turno'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminAgendasRouteImport } from './routes/admin.agendas'
+import { Route as AdminCalendarioRouteImport } from './routes/admin.calendario'
+import { Route as AdminCheckInRouteImport } from './routes/admin.check-in'
+import { Route as AdminCoberturasRouteImport } from './routes/admin.coberturas'
+import { Route as AdminConfiguracionRouteImport } from './routes/admin.configuracion'
+import { Route as AdminConsultoriosRouteImport } from './routes/admin.consultorios'
+import { Route as AdminEspecialidadesRouteImport } from './routes/admin.especialidades'
+import { Route as AdminMedicosRouteImport } from './routes/admin.medicos'
+import { Route as AdminPacientesRouteImport } from './routes/admin.pacientes'
+import { Route as AdminReportesRouteImport } from './routes/admin.reportes'
+import { Route as AdminSalaEsperaRouteImport } from './routes/admin.sala-espera'
+import { Route as AdminTurnosRouteImport } from './routes/admin.turnos'
+import { Route as PatientMedicosIndexRouteImport } from './routes/_patient.medicos.index'
+import { Route as PatientMedicosIdRouteImport } from './routes/_patient.medicos.$id'
+import { Route as PatientMisTurnosIndexRouteImport } from './routes/_patient.mis-turnos.index'
+import { Route as PatientMisTurnosIdRouteImport } from './routes/_patient.mis-turnos.$id'
+import { Route as PatientQrIdRouteImport } from './routes/_patient.qr.$id'
 
-const IndexRoute = IndexRouteImport.update({
+const PatientRoute = PatientRouteImport.update({
+  id: '/_patient',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecuperarPasswordRoute = RecuperarPasswordRouteImport.update({
+  id: '/recuperar-password',
+  path: '/recuperar-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegistroRoute = RegistroRouteImport.update({
+  id: '/registro',
+  path: '/registro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientIndexRoute = PatientIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientEspecialidadesRoute = PatientEspecialidadesRouteImport.update({
+  id: '/especialidades',
+  path: '/especialidades',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientMiPerfilRoute = PatientMiPerfilRouteImport.update({
+  id: '/mi-perfil',
+  path: '/mi-perfil',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientReservarTurnoRoute = PatientReservarTurnoRouteImport.update({
+  id: '/reservar-turno',
+  path: '/reservar-turno',
+  getParentRoute: () => PatientRoute,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminAgendasRoute = AdminAgendasRouteImport.update({
+  id: '/agendas',
+  path: '/agendas',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminCalendarioRoute = AdminCalendarioRouteImport.update({
+  id: '/calendario',
+  path: '/calendario',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminCheckInRoute = AdminCheckInRouteImport.update({
+  id: '/check-in',
+  path: '/check-in',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminCoberturasRoute = AdminCoberturasRouteImport.update({
+  id: '/coberturas',
+  path: '/coberturas',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminConfiguracionRoute = AdminConfiguracionRouteImport.update({
+  id: '/configuracion',
+  path: '/configuracion',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminConsultoriosRoute = AdminConsultoriosRouteImport.update({
+  id: '/consultorios',
+  path: '/consultorios',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminEspecialidadesRoute = AdminEspecialidadesRouteImport.update({
+  id: '/especialidades',
+  path: '/especialidades',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminMedicosRoute = AdminMedicosRouteImport.update({
+  id: '/medicos',
+  path: '/medicos',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPacientesRoute = AdminPacientesRouteImport.update({
+  id: '/pacientes',
+  path: '/pacientes',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminReportesRoute = AdminReportesRouteImport.update({
+  id: '/reportes',
+  path: '/reportes',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSalaEsperaRoute = AdminSalaEsperaRouteImport.update({
+  id: '/sala-espera',
+  path: '/sala-espera',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminTurnosRoute = AdminTurnosRouteImport.update({
+  id: '/turnos',
+  path: '/turnos',
+  getParentRoute: () => AdminRoute,
+} as any)
+const PatientMedicosIndexRoute = PatientMedicosIndexRouteImport.update({
+  id: '/medicos/',
+  path: '/medicos/',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientMedicosIdRoute = PatientMedicosIdRouteImport.update({
+  id: '/medicos/$id',
+  path: '/medicos/$id',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientMisTurnosIndexRoute = PatientMisTurnosIndexRouteImport.update({
+  id: '/mis-turnos/',
+  path: '/mis-turnos/',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientMisTurnosIdRoute = PatientMisTurnosIdRouteImport.update({
+  id: '/mis-turnos/$id',
+  path: '/mis-turnos/$id',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientQrIdRoute = PatientQrIdRouteImport.update({
+  id: '/qr/$id',
+  path: '/qr/$id',
+  getParentRoute: () => PatientRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof PatientIndexRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/login': typeof LoginRoute
+  '/recuperar-password': typeof RecuperarPasswordRoute
+  '/registro': typeof RegistroRoute
+  '/especialidades': typeof PatientEspecialidadesRoute
+  '/mi-perfil': typeof PatientMiPerfilRoute
+  '/reservar-turno': typeof PatientReservarTurnoRoute
+  '/admin/agendas': typeof AdminAgendasRoute
+  '/admin/calendario': typeof AdminCalendarioRoute
+  '/admin/check-in': typeof AdminCheckInRoute
+  '/admin/coberturas': typeof AdminCoberturasRoute
+  '/admin/configuracion': typeof AdminConfiguracionRoute
+  '/admin/consultorios': typeof AdminConsultoriosRoute
+  '/admin/especialidades': typeof AdminEspecialidadesRoute
+  '/admin/medicos': typeof AdminMedicosRoute
+  '/admin/pacientes': typeof AdminPacientesRoute
+  '/admin/reportes': typeof AdminReportesRoute
+  '/admin/sala-espera': typeof AdminSalaEsperaRoute
+  '/admin/turnos': typeof AdminTurnosRoute
+  '/admin/': typeof AdminIndexRoute
+  '/medicos/$id': typeof PatientMedicosIdRoute
+  '/mis-turnos/$id': typeof PatientMisTurnosIdRoute
+  '/qr/$id': typeof PatientQrIdRoute
+  '/medicos/': typeof PatientMedicosIndexRoute
+  '/mis-turnos/': typeof PatientMisTurnosIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/login': typeof LoginRoute
+  '/recuperar-password': typeof RecuperarPasswordRoute
+  '/registro': typeof RegistroRoute
+  '/especialidades': typeof PatientEspecialidadesRoute
+  '/mi-perfil': typeof PatientMiPerfilRoute
+  '/reservar-turno': typeof PatientReservarTurnoRoute
+  '/admin/agendas': typeof AdminAgendasRoute
+  '/admin/calendario': typeof AdminCalendarioRoute
+  '/admin/check-in': typeof AdminCheckInRoute
+  '/admin/coberturas': typeof AdminCoberturasRoute
+  '/admin/configuracion': typeof AdminConfiguracionRoute
+  '/admin/consultorios': typeof AdminConsultoriosRoute
+  '/admin/especialidades': typeof AdminEspecialidadesRoute
+  '/admin/medicos': typeof AdminMedicosRoute
+  '/admin/pacientes': typeof AdminPacientesRoute
+  '/admin/reportes': typeof AdminReportesRoute
+  '/admin/sala-espera': typeof AdminSalaEsperaRoute
+  '/admin/turnos': typeof AdminTurnosRoute
+  '/': typeof PatientIndexRoute
+  '/admin': typeof AdminIndexRoute
+  '/medicos/$id': typeof PatientMedicosIdRoute
+  '/mis-turnos/$id': typeof PatientMisTurnosIdRoute
+  '/qr/$id': typeof PatientQrIdRoute
+  '/medicos': typeof PatientMedicosIndexRoute
+  '/mis-turnos': typeof PatientMisTurnosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/_patient': typeof PatientRouteWithChildren
+  '/admin': typeof AdminRouteWithChildren
+  '/login': typeof LoginRoute
+  '/recuperar-password': typeof RecuperarPasswordRoute
+  '/registro': typeof RegistroRoute
+  '/_patient/especialidades': typeof PatientEspecialidadesRoute
+  '/_patient/mi-perfil': typeof PatientMiPerfilRoute
+  '/_patient/reservar-turno': typeof PatientReservarTurnoRoute
+  '/admin/agendas': typeof AdminAgendasRoute
+  '/admin/calendario': typeof AdminCalendarioRoute
+  '/admin/check-in': typeof AdminCheckInRoute
+  '/admin/coberturas': typeof AdminCoberturasRoute
+  '/admin/configuracion': typeof AdminConfiguracionRoute
+  '/admin/consultorios': typeof AdminConsultoriosRoute
+  '/admin/especialidades': typeof AdminEspecialidadesRoute
+  '/admin/medicos': typeof AdminMedicosRoute
+  '/admin/pacientes': typeof AdminPacientesRoute
+  '/admin/reportes': typeof AdminReportesRoute
+  '/admin/sala-espera': typeof AdminSalaEsperaRoute
+  '/admin/turnos': typeof AdminTurnosRoute
+  '/_patient/': typeof PatientIndexRoute
+  '/admin/': typeof AdminIndexRoute
+  '/_patient/medicos/$id': typeof PatientMedicosIdRoute
+  '/_patient/mis-turnos/$id': typeof PatientMisTurnosIdRoute
+  '/_patient/qr/$id': typeof PatientQrIdRoute
+  '/_patient/medicos/': typeof PatientMedicosIndexRoute
+  '/_patient/mis-turnos/': typeof PatientMisTurnosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/login'
+    | '/recuperar-password'
+    | '/registro'
+    | '/especialidades'
+    | '/mi-perfil'
+    | '/reservar-turno'
+    | '/admin/agendas'
+    | '/admin/calendario'
+    | '/admin/check-in'
+    | '/admin/coberturas'
+    | '/admin/configuracion'
+    | '/admin/consultorios'
+    | '/admin/especialidades'
+    | '/admin/medicos'
+    | '/admin/pacientes'
+    | '/admin/reportes'
+    | '/admin/sala-espera'
+    | '/admin/turnos'
+    | '/admin/'
+    | '/medicos/$id'
+    | '/mis-turnos/$id'
+    | '/qr/$id'
+    | '/medicos/'
+    | '/mis-turnos/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/login'
+    | '/recuperar-password'
+    | '/registro'
+    | '/especialidades'
+    | '/mi-perfil'
+    | '/reservar-turno'
+    | '/admin/agendas'
+    | '/admin/calendario'
+    | '/admin/check-in'
+    | '/admin/coberturas'
+    | '/admin/configuracion'
+    | '/admin/consultorios'
+    | '/admin/especialidades'
+    | '/admin/medicos'
+    | '/admin/pacientes'
+    | '/admin/reportes'
+    | '/admin/sala-espera'
+    | '/admin/turnos'
+    | '/'
+    | '/admin'
+    | '/medicos/$id'
+    | '/mis-turnos/$id'
+    | '/qr/$id'
+    | '/medicos'
+    | '/mis-turnos'
+  id:
+    | '__root__'
+    | '/_patient'
+    | '/admin'
+    | '/login'
+    | '/recuperar-password'
+    | '/registro'
+    | '/_patient/especialidades'
+    | '/_patient/mi-perfil'
+    | '/_patient/reservar-turno'
+    | '/admin/agendas'
+    | '/admin/calendario'
+    | '/admin/check-in'
+    | '/admin/coberturas'
+    | '/admin/configuracion'
+    | '/admin/consultorios'
+    | '/admin/especialidades'
+    | '/admin/medicos'
+    | '/admin/pacientes'
+    | '/admin/reportes'
+    | '/admin/sala-espera'
+    | '/admin/turnos'
+    | '/_patient/'
+    | '/admin/'
+    | '/_patient/medicos/$id'
+    | '/_patient/mis-turnos/$id'
+    | '/_patient/qr/$id'
+    | '/_patient/medicos/'
+    | '/_patient/mis-turnos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  PatientRoute: typeof PatientRouteWithChildren
+  AdminRoute: typeof AdminRouteWithChildren
+  LoginRoute: typeof LoginRoute
+  RecuperarPasswordRoute: typeof RecuperarPasswordRoute
+  RegistroRoute: typeof RegistroRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/_patient': {
+      id: '/_patient'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof PatientRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recuperar-password': {
+      id: '/recuperar-password'
+      path: '/recuperar-password'
+      fullPath: '/recuperar-password'
+      preLoaderRoute: typeof RecuperarPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/registro': {
+      id: '/registro'
+      path: '/registro'
+      fullPath: '/registro'
+      preLoaderRoute: typeof RegistroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_patient/': {
+      id: '/_patient/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof PatientIndexRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/_patient/especialidades': {
+      id: '/_patient/especialidades'
+      path: '/especialidades'
+      fullPath: '/especialidades'
+      preLoaderRoute: typeof PatientEspecialidadesRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/_patient/mi-perfil': {
+      id: '/_patient/mi-perfil'
+      path: '/mi-perfil'
+      fullPath: '/mi-perfil'
+      preLoaderRoute: typeof PatientMiPerfilRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/_patient/reservar-turno': {
+      id: '/_patient/reservar-turno'
+      path: '/reservar-turno'
+      fullPath: '/reservar-turno'
+      preLoaderRoute: typeof PatientReservarTurnoRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/agendas': {
+      id: '/admin/agendas'
+      path: '/agendas'
+      fullPath: '/admin/agendas'
+      preLoaderRoute: typeof AdminAgendasRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/calendario': {
+      id: '/admin/calendario'
+      path: '/calendario'
+      fullPath: '/admin/calendario'
+      preLoaderRoute: typeof AdminCalendarioRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/check-in': {
+      id: '/admin/check-in'
+      path: '/check-in'
+      fullPath: '/admin/check-in'
+      preLoaderRoute: typeof AdminCheckInRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/coberturas': {
+      id: '/admin/coberturas'
+      path: '/coberturas'
+      fullPath: '/admin/coberturas'
+      preLoaderRoute: typeof AdminCoberturasRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/configuracion': {
+      id: '/admin/configuracion'
+      path: '/configuracion'
+      fullPath: '/admin/configuracion'
+      preLoaderRoute: typeof AdminConfiguracionRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/consultorios': {
+      id: '/admin/consultorios'
+      path: '/consultorios'
+      fullPath: '/admin/consultorios'
+      preLoaderRoute: typeof AdminConsultoriosRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/especialidades': {
+      id: '/admin/especialidades'
+      path: '/especialidades'
+      fullPath: '/admin/especialidades'
+      preLoaderRoute: typeof AdminEspecialidadesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/medicos': {
+      id: '/admin/medicos'
+      path: '/medicos'
+      fullPath: '/admin/medicos'
+      preLoaderRoute: typeof AdminMedicosRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/pacientes': {
+      id: '/admin/pacientes'
+      path: '/pacientes'
+      fullPath: '/admin/pacientes'
+      preLoaderRoute: typeof AdminPacientesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/reportes': {
+      id: '/admin/reportes'
+      path: '/reportes'
+      fullPath: '/admin/reportes'
+      preLoaderRoute: typeof AdminReportesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/sala-espera': {
+      id: '/admin/sala-espera'
+      path: '/sala-espera'
+      fullPath: '/admin/sala-espera'
+      preLoaderRoute: typeof AdminSalaEsperaRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/turnos': {
+      id: '/admin/turnos'
+      path: '/turnos'
+      fullPath: '/admin/turnos'
+      preLoaderRoute: typeof AdminTurnosRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/_patient/medicos/': {
+      id: '/_patient/medicos/'
+      path: '/medicos'
+      fullPath: '/medicos/'
+      preLoaderRoute: typeof PatientMedicosIndexRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/_patient/medicos/$id': {
+      id: '/_patient/medicos/$id'
+      path: '/medicos/$id'
+      fullPath: '/medicos/$id'
+      preLoaderRoute: typeof PatientMedicosIdRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/_patient/mis-turnos/': {
+      id: '/_patient/mis-turnos/'
+      path: '/mis-turnos'
+      fullPath: '/mis-turnos/'
+      preLoaderRoute: typeof PatientMisTurnosIndexRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/_patient/mis-turnos/$id': {
+      id: '/_patient/mis-turnos/$id'
+      path: '/mis-turnos/$id'
+      fullPath: '/mis-turnos/$id'
+      preLoaderRoute: typeof PatientMisTurnosIdRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/_patient/qr/$id': {
+      id: '/_patient/qr/$id'
+      path: '/qr/$id'
+      fullPath: '/qr/$id'
+      preLoaderRoute: typeof PatientQrIdRouteImport
+      parentRoute: typeof PatientRoute
     }
   }
 }
 
+interface PatientRouteChildren {
+  PatientEspecialidadesRoute: typeof PatientEspecialidadesRoute
+  PatientMiPerfilRoute: typeof PatientMiPerfilRoute
+  PatientReservarTurnoRoute: typeof PatientReservarTurnoRoute
+  PatientIndexRoute: typeof PatientIndexRoute
+  PatientMedicosIdRoute: typeof PatientMedicosIdRoute
+  PatientMisTurnosIdRoute: typeof PatientMisTurnosIdRoute
+  PatientQrIdRoute: typeof PatientQrIdRoute
+  PatientMedicosIndexRoute: typeof PatientMedicosIndexRoute
+  PatientMisTurnosIndexRoute: typeof PatientMisTurnosIndexRoute
+}
+
+const PatientRouteChildren: PatientRouteChildren = {
+  PatientEspecialidadesRoute: PatientEspecialidadesRoute,
+  PatientMiPerfilRoute: PatientMiPerfilRoute,
+  PatientReservarTurnoRoute: PatientReservarTurnoRoute,
+  PatientIndexRoute: PatientIndexRoute,
+  PatientMedicosIdRoute: PatientMedicosIdRoute,
+  PatientMisTurnosIdRoute: PatientMisTurnosIdRoute,
+  PatientQrIdRoute: PatientQrIdRoute,
+  PatientMedicosIndexRoute: PatientMedicosIndexRoute,
+  PatientMisTurnosIndexRoute: PatientMisTurnosIndexRoute,
+}
+
+const PatientRouteWithChildren =
+  PatientRoute._addFileChildren(PatientRouteChildren)
+
+interface AdminRouteChildren {
+  AdminAgendasRoute: typeof AdminAgendasRoute
+  AdminCalendarioRoute: typeof AdminCalendarioRoute
+  AdminCheckInRoute: typeof AdminCheckInRoute
+  AdminCoberturasRoute: typeof AdminCoberturasRoute
+  AdminConfiguracionRoute: typeof AdminConfiguracionRoute
+  AdminConsultoriosRoute: typeof AdminConsultoriosRoute
+  AdminEspecialidadesRoute: typeof AdminEspecialidadesRoute
+  AdminMedicosRoute: typeof AdminMedicosRoute
+  AdminPacientesRoute: typeof AdminPacientesRoute
+  AdminReportesRoute: typeof AdminReportesRoute
+  AdminSalaEsperaRoute: typeof AdminSalaEsperaRoute
+  AdminTurnosRoute: typeof AdminTurnosRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminAgendasRoute: AdminAgendasRoute,
+  AdminCalendarioRoute: AdminCalendarioRoute,
+  AdminCheckInRoute: AdminCheckInRoute,
+  AdminCoberturasRoute: AdminCoberturasRoute,
+  AdminConfiguracionRoute: AdminConfiguracionRoute,
+  AdminConsultoriosRoute: AdminConsultoriosRoute,
+  AdminEspecialidadesRoute: AdminEspecialidadesRoute,
+  AdminMedicosRoute: AdminMedicosRoute,
+  AdminPacientesRoute: AdminPacientesRoute,
+  AdminReportesRoute: AdminReportesRoute,
+  AdminSalaEsperaRoute: AdminSalaEsperaRoute,
+  AdminTurnosRoute: AdminTurnosRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  PatientRoute: PatientRouteWithChildren,
+  AdminRoute: AdminRouteWithChildren,
+  LoginRoute: LoginRoute,
+  RecuperarPasswordRoute: RecuperarPasswordRoute,
+  RegistroRoute: RegistroRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
