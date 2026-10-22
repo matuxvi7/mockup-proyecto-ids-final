@@ -53,7 +53,7 @@ function Booking() {
         <div className="mt-6 rounded-lg bg-muted p-4 text-left text-sm">
           <p className="font-semibold">{L.doctorName(doc)}</p>
           <p className="text-primary">{L.specialtyName(sp)}</p>
-          <p className="mt-2 capitalize">{fLong(slot)} · {fTime(slot)} h</p>
+          <p className="mt-2 capitalize-first">{fLong(slot)} · {fTime(slot)} h</p>
           <p className="text-muted-foreground">{d && L.roomName(d.roomId)} · {L.insuranceName(ins)}</p>
         </div>
         <div className="mt-6 flex gap-2">
