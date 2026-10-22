@@ -15,7 +15,7 @@ function Login() {
   const s = useStore();
   const nav = useNavigate();
   const [role, setRole] = useState<"paciente" | "recepcion" | "admin">("paciente");
-  const [email, setEmail] = useState("lucia.fernandez@demo.com");
+  const [email, setEmail] = useState("maria.gomez@demo.com");
   const [pass, setPass] = useState("demo1234");
   const [err, setErr] = useState<{ email?: string; pass?: string }>({});
   const [loading, setLoading] = useState(false);
@@ -38,7 +38,7 @@ function Login() {
   return (
     <AuthShell title="Iniciar sesión" subtitle="Elegí con qué perfil querés ingresar a la demo." footer={<>¿No tenés cuenta? <Link to="/registro" className="font-semibold text-primary hover:underline">Registrate</Link></>}>
       <div className="mb-5">
-        <Segmented value={role} onChange={(v) => { setRole(v); setEmail(v === "paciente" ? "lucia.fernandez@demo.com" : v === "recepcion" ? "recepcion@saludintegral.demo" : "admin@saludintegral.demo"); }} options={[{ value: "paciente", label: "Paciente" }, { value: "recepcion", label: "Recepción" }, { value: "admin", label: "Administración" }]} />
+        <Segmented value={role} onChange={(v) => { setRole(v); setEmail(v === "paciente" ? "maria.gomez@demo.com" : v === "recepcion" ? "recepcion@saludintegral.demo" : "admin@saludintegral.demo"); }} options={[{ value: "paciente", label: "Paciente" }, { value: "recepcion", label: "Recepción" }, { value: "admin", label: "Administración" }]} />
       </div>
       <form onSubmit={submit} className="space-y-4" noValidate>
         <Field label="Correo electrónico" error={err.email}><Input type="email" value={email} aria-invalid={!!err.email} onChange={(e) => setEmail(e.target.value)} /></Field>

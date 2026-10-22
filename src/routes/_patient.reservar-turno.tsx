@@ -140,7 +140,7 @@ function Booking() {
           <dl className="mt-4 grid grid-cols-2 gap-4 text-sm">
             <div><dt className="text-xs text-muted-foreground">Profesional</dt><dd className="font-medium">{L.doctorName(d.id)}</dd></div>
             <div><dt className="text-xs text-muted-foreground">Especialidad</dt><dd className="font-medium">{L.specialtyName(sp)}</dd></div>
-            <div><dt className="text-xs text-muted-foreground">Fecha</dt><dd className="font-medium capitalize">{fLong(slot)}</dd></div>
+            <div><dt className="text-xs text-muted-foreground">Fecha</dt><dd className="font-medium capitalize-first">{fLong(slot)}</dd></div>
             <div><dt className="text-xs text-muted-foreground">Hora</dt><dd className="font-medium">{fTime(slot)} h</dd></div>
             <div><dt className="text-xs text-muted-foreground">Consultorio</dt><dd className="font-medium">{L.roomName(d.roomId)}</dd></div>
             <div><dt className="text-xs text-muted-foreground">Paciente</dt><dd className="font-medium">{L.patientName(DEMO_PATIENT_ID)}</dd></div>

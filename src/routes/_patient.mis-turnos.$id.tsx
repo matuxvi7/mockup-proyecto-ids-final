@@ -37,7 +37,7 @@ function Detail() {
       <Link to="/mis-turnos" className="mb-4 inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground"><ArrowLeft className="size-4" aria-hidden /> Mis turnos</Link>
       <Card className="max-w-2xl p-6">
         <div className="flex items-start justify-between gap-3">
-          <div><p className="text-xs text-muted-foreground">Turno {a.id}</p><h1 className="text-2xl font-bold capitalize">{fLong(a.start)}</h1><p className="text-lg font-semibold text-primary">{fTime(a.start)} h · {a.duration} min</p></div>
+          <div><p className="text-xs text-muted-foreground">Turno {a.id}</p><h1 className="text-2xl font-bold capitalize-first">{fLong(a.start)}</h1><p className="text-lg font-semibold text-primary">{fTime(a.start)} h · {a.duration} min</p></div>
           <StatusBadge status={a.status} />
         </div>
         <div className="mt-6 flex items-center gap-3 rounded-lg bg-muted p-4">

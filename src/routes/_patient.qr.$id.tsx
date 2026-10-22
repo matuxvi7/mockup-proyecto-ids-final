@@ -33,7 +33,7 @@ function QR() {
           <p className="mt-3 font-mono text-lg font-bold tracking-widest">{a.id}</p>
           <div className="mt-2"><StatusBadge status={a.status} /></div>
           <p className="mt-4 font-semibold">{L.doctorName(a.doctorId)}</p>
-          <p className="text-sm text-muted-foreground capitalize">{fLong(a.start)} · {fTime(a.start)} h · {L.roomName(a.roomId)}</p>
+          <p className="text-sm text-muted-foreground capitalize-first">{fLong(a.start)} · {fTime(a.start)} h · {L.roomName(a.roomId)}</p>
           {a.arrivedAt && <p className="mt-3 rounded-lg bg-success-soft p-2 text-sm text-success-strong">Llegada registrada a las {fTime(a.arrivedAt)} h</p>}
           {!usable && <p className="mt-3 rounded-lg bg-warning-soft p-2 text-sm text-warning-foreground">Este código ya no es válido.</p>}
         </div>

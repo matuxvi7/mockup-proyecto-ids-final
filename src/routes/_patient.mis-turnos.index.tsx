@@ -40,7 +40,7 @@ function MyAppointments() {
                   <Avatar name={L.doctorName(a.doctorId)} size="sm" />
                   <div>
                     <p className="font-semibold">{L.doctorName(a.doctorId)}</p>
-                    <p className="text-sm text-muted-foreground capitalize">{L.specialtyName(a.specialtyId)} · {fLong(a.start)}</p>
+                    <p className="text-sm text-muted-foreground">{L.specialtyName(a.specialtyId)} · {fLong(a.start)}</p>
                   </div>
                 </div>
                 <StatusBadge status={a.status} />

@@ -135,3 +135,9 @@
   50% { top: 85%; }
 }
 .scan-line { animation: scan 1.4s ease-in-out infinite; }
+
+@utility capitalize-first {
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
